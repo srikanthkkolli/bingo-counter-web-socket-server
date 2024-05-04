@@ -77,7 +77,7 @@ public class MySocketHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         log.info("New client connection established: {}\n", session.getId());
-        session.sendMessage(new TextMessage("New WebSocket connection established"));
+//        session.sendMessage(new TextMessage("New WebSocket connection established"));
     }
 
     @Override
