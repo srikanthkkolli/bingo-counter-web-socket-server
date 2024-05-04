@@ -1,5 +1,6 @@
 package com.poc.websocketserver;
 
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -60,7 +61,7 @@ public class MySocketHandler extends TextWebSocketHandler {
      * @param message: number payload
      */
     @Override
-    public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+    public void handleTextMessage(@NonNull WebSocketSession session, TextMessage message) throws Exception {
         String payload = message.getPayload();
         log.info("Received message: {} ", payload);
 
@@ -80,7 +81,7 @@ public class MySocketHandler extends TextWebSocketHandler {
     }
 
     @Override
-    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+    public void afterConnectionClosed(WebSocketSession session, @NonNull CloseStatus status) {
         log.info("Shutting down client connection: {}\n", session.getId());
     }
 }
