@@ -71,7 +71,7 @@ public class MySocketHandler extends TextWebSocketHandler {
             wait500();
             shuffleAndSend(session, integerList);
         }
-        session.sendMessage(new TextMessage("Completed"));
+        session.sendMessage(new TextMessage("BINGOOOO!!!"));
     }
 
     @Override
