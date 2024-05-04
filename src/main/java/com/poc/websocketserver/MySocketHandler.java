@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Socket to handle
+ * Socket to handle BINGO randomize
  */
 @Slf4j
 public class MySocketHandler extends TextWebSocketHandler {
