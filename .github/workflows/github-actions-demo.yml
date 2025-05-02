@@ -1,6 +1,8 @@
 name: Web Socket Server Tests
 run-name: Run by ${{ github.actor }} on ${{ github.ref_name }}
-on: [ push ]
+on:
+  push
+  workflow_dispatch:
 jobs:
   build-and-test:
     runs-on: self-hosted
