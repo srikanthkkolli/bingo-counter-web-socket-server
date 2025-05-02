@@ -19,7 +19,7 @@ import java.util.List;
 public class MySocketHandler extends TextWebSocketHandler {
 
 
-    private static List<Integer> getIntegers(String payload) {
+    static List<Integer> getIntegers(String payload) {
         int maxNumber = Integer.parseInt(payload);
         List<Integer> integerList = new ArrayList<>(maxNumber);
         for (int i = 1; i <= maxNumber; i++) {
@@ -45,7 +45,7 @@ public class MySocketHandler extends TextWebSocketHandler {
         });
     }
 
-    private static boolean isInteger(String payload) {
+    static boolean isInteger(String payload) {
         try {
             Integer.parseInt(payload);
             return true;
