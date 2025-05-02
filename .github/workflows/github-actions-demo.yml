@@ -1,11 +1,17 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Web Socket Server Tests
+run-name: Run by ${{ github.actor }} on ${{ github.ref_name }}
 on: [ push ]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Log GitHub context
+        run: |
+          echo "Triggered by event: ${{ github.event_name }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Branch: ${{ github.ref_name }}"
+
       - name: Check out repository code
         uses: actions/checkout@v4
 
@@ -23,3 +29,6 @@ jobs:
 
       - name: Run tests
         run: ./gradlew test
+
+      - name: ✅ Job Completed
+        run: echo "🎉 Gradle build and tests completed successfully!"
