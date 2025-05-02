@@ -3,7 +3,7 @@ run-name: Run by ${{ github.actor }} on ${{ github.ref_name }}
 on: [ push ]
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Log GitHub context
